@@ -1,4 +1,4 @@
-import { collection, getDocs } from '../firebase'
+import { collection, getDocs, query, orderBy } from '../firebase'
 import { useEffect, useState } from 'react'
 
 export default function GetProjects(db, serviceName) {
@@ -8,7 +8,8 @@ export default function GetProjects(db, serviceName) {
     useEffect(() => {
         (async () => {
             try {
-                const projectsSnapshot = await getDocs(collection(db, serviceName))
+                const q = query(collection(db, serviceName), orderBy("id"))
+                const projectsSnapshot = await getDocs(q)
                 setProjects(projectsSnapshot.docs.map(doc => doc.data()))
                 setLoading(false)
             } catch (error) {
@@ -16,6 +17,6 @@ export default function GetProjects(db, serviceName) {
                 setLoading(false)
             }
         })()
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
     return { projects, loading, error }
 }

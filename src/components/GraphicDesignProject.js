@@ -6,7 +6,6 @@ import ContactUs from './ContactUs'
 import { useDocumentTitle } from './CustomHooks'
 import './styles/ProjectDetails.css'
 import { db } from '../firebase'
-import addSubCollection from '../models/addSubCollection'
 import GetProjects from '../models/GetProjects'
 
 function GraphicDesignProject({ displayHandler }) {
@@ -14,15 +13,15 @@ function GraphicDesignProject({ displayHandler }) {
     useDocumentTitle(`Beyond Pixel · ${id}`)
     const { projects: project, loading, error } = GetProjects(db, `graphicDesign/${id}/subCollection`)
     let array = [], subArray = []
-    !loading &&
-        project[0].imgSrc.forEach((p, i) => {
-            (i + 1) % 5 === 0 ? array.push(p) : subArray.push(p)
-            if ((i + 1) % 4 === 0 || i === project[0].imgSrc.length - 1) {
-                array.push(subArray)
-                subArray = []
-            }
-        })
-    // addSubCollection(db, `graphicDesign/${id}/subCollection`, "innerGallery", details)
+
+    !loading && project[0].imgSrc.forEach((p, i) => {
+        (i + 1) % 5 === 0 ? array.push(p) : subArray.push(p)
+        if ((i + 1) % 4 === 0 || i === project[0].imgSrc.length - 1) {
+            array.push(subArray)
+            subArray = []
+        }
+    })
+
     return (
         !loading &&
         <div>

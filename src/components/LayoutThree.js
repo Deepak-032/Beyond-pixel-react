@@ -3,9 +3,6 @@ import './styles/LayoutThree.css'
 
 function LayoutThree({ name, year, paraOne, paraTwo }) {
     return (
-        // <div className="row max_width">
-        //     <div className="col"></div>
-        // </div>
         <div className="row layout_three_row max_width">
             <div className="col-12 col-lg-5 layout_three_container">
                 <div className="layout_three_heading">Case Study of<br />{name}</div>

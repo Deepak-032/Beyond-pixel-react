@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CinematographyLayout from './MGraphicsCinematographyLayout'
-import { useStateValue } from './StateProvider'
 import { useDocumentTitle } from './CustomHooks'
 import GetProjects from '../models/GetProjects'
 import { db } from '../firebase';
 
 function Cinematography({ displayHandler }) {
     useDocumentTitle("Beyond Pixel · Cinematography")
-    // const [{ cinematography }] = useStateValue()
     const { projects : cinematography, error } = GetProjects(db, 'cinematography')
 
     return (

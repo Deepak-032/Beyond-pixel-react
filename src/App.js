@@ -15,7 +15,6 @@ import Cinematography from "./components/Cinematography";
 import MotionGraphics from "./components/MotionGraphics";
 import UiDesign from "./components/UiDesign";
 import GraphicDesignProject from "./components/GraphicDesignProject";
-import UploadMultiple from "./components/UploadMultiple";
 import { auth, onAuthStateChanged } from './firebase';
 import UiDesignProject from "./components/UiDesignProject";
 
@@ -23,7 +22,6 @@ function App() {
   const displayHandler = () => {
     document.getElementById("pop_box").style.display = "block"
   }
-  const [projectName, setProjectName] = useState('')
   const [loading, setLoading] = useState(true)
   const [user, setUser] = useState('')
 
@@ -45,13 +43,10 @@ function App() {
             <Footer />
           </Route>
           <Route exact path="/admin/upload">
-            {user ? <BackPanel setProjectName={setProjectName} /> : <Redirect to="/admin" />}
+            {user ? <BackPanel /> : <Redirect to="/admin" />}
             <Footer />
           </Route>
-          <Route exact path="/admin/upload/multiple">
-            {user ? <UploadMultiple projectName={projectName} /> : <Redirect to="/admin" />}
-            <Footer />
-          </Route>
+          
           <Route exact path="/about us">
             <NavBar displayHandler={displayHandler} />
             <Header

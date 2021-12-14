@@ -34,12 +34,26 @@ a:hover,
   color: #E85353 !important;
   transition: 0.4s;
 }
-input:disabled{
+button:disabled,
+button:disabled:hover{
   background-color: #9c9c9c !important;
-  color: #9c9c9c;
-  display: none;
 }
 .btn_contact_us:hover,
 .btn_contact:hover{
   background: #e76b6b !important;
+}
+.navbar_admin {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none !important;
+  text-transform: capitalize;
+  font-size: 14px;
+  color: #434343;
+}
+.navbar_admin:hover {
+  color: #E85353 !important;
+  transition: 0.4s;
+}
+input[type="color"] {
+  height: 35px;
 }

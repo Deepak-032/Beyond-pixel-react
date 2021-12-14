@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Link, useHistory } from "react-router-dom"
 import './styles/Admin.css'
 import { useDocumentTitle } from './CustomHooks'

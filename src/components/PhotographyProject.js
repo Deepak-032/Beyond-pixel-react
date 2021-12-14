@@ -6,12 +6,9 @@ import { useDocumentTitle } from './CustomHooks'
 import './styles/ProjectDetails.css'
 import GetProjects from '../models/GetProjects'
 import { db } from '../firebase'
-import addSubCollection from '../models/addSubCollection'
-import { useStateValue } from './StateProvider'
 
 function PhotographyProject({ displayHandler }) {
     const { id } = useParams()
-    // const [{ uiDesign }] = useStateValue()
     useDocumentTitle(`Beyond Pixel · ${id}`)
     const { projects: project, loading, error } = GetProjects(db, `photography/${id}/subCollection`)
     

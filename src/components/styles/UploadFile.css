@@ -21,7 +21,7 @@
 }
 .image{
     border: 1px solid #ced4da;
-    padding: 43px 10px;
+    padding: 37px 10px;
 }
 .upload_file_container{
     border: 1px solid #ced4da;
@@ -32,6 +32,14 @@
 }
 .demo_project_name{
     border: 1px solid #ced4da;
-    padding: 10px;
+    padding: 8px;
     text-align: center;
+}
+.upload_file_heading{
+    font-size: 22px;
+    position: relative;
+    top: -36px;
+    background: #fff;
+    padding: 0 6px;
+    margin: 0;
 }

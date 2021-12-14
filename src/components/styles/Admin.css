@@ -24,6 +24,6 @@
 .form_admin>*:not(:last-child){
     margin-bottom: 37px;
 }
-.btn_login:disabled {
+/* .btn_login:disabled {
     background: #ff9c9c !important;
-}
+} */

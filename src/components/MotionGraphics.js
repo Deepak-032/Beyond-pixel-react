@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import MotionGraphicsLayout from './MGraphicsCinematographyLayout'
 import { useDocumentTitle } from './CustomHooks'
-// import { useStateValue } from './StateProvider'
 import GetProjects from '../models/GetProjects'
 import { db } from '../firebase';
 
 function MotionGraphics({ displayHandler }) {
     useDocumentTitle("Beyond Pixel · Motion Graphics")
-    // const [{ motionGraphics }] = useStateValue()
     const { projects : motionGraphics, error } = GetProjects(db, 'motionGraphics')
-    
+
     return (
         <>
             {error ? <h1 className="text-center">{error}</h1> :
@@ -20,7 +18,7 @@ function MotionGraphics({ displayHandler }) {
                             key={project.id}
                             name={project.name}
                             content={project.content}
-                            video={project.videoSrc}
+                            videoSrc={project.videoSrc}
                             displayHandler={displayHandler}
                         />
                     )
