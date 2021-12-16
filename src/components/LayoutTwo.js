@@ -1,4 +1,4 @@
-// for 50% image layout in project details
+// for 50% image layout on project details page
 import React from 'react'
 import './styles/LayoutTwo.css'
 

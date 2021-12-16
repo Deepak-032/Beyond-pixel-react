@@ -59,8 +59,7 @@
 .services_dropdown>li>a{
     padding: 0px 20px;
 }
-@media (max-width: 767px) {
-
+@media (max-width: 770px) {
     .navbar_right{
         align-items: flex-start;
         flex-direction: column;

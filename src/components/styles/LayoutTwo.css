@@ -1,13 +1,14 @@
 .layout_two.first{
     margin-bottom: 30px;
 }
-.layout_two img{
+.layout_two img,
+.box_shadow{
     box-shadow: 0 0 50px rgb(0 0 0 / 10%);
 }
 .img_margin_l2{
     margin-right: 30px;
 }
-@media (max-width: 767px) {
+@media (max-width: 770px) {
     .layout_two{
         margin: 0 11px;
     }

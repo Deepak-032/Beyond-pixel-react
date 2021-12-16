@@ -18,8 +18,9 @@
     height: 100%;
     position: absolute;
     top: 0;
-    background: -webkit-linear-gradient(top, #FF4747 44%,#FD8814 67%);
-    opacity: 45%;
+    background-color: #EF4D4D;
+    background-image: linear-gradient(to bottom, #FF4747, #FD8814);
+    opacity: 0.5;
 }
 .form_container{
     background: #ffff;

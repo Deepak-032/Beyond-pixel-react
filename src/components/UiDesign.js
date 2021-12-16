@@ -2,22 +2,22 @@ import React from 'react'
 import GetProjects from '../models/GetProjects'
 import { db } from '../firebase';
 import UiDesignLayout from './UiDesignLayout';
+import { useDocumentTitle } from './CustomHooks'
 
 function UiDesign() {
-    // addProject()
+    useDocumentTitle("Beyond Pixel · Ui Design")
     const { projects: uiDesign, error } = GetProjects(db, 'uiDesign')
 
     return (
         <>
             {error ? <h1 className="text-center">{error}</h1> :
-                uiDesign.map((project, index) => {
-                    project.id = index + 1
+                uiDesign.map(project => {
                     return (
                         <UiDesignLayout
                             key={project.id}
                             name={project.name}
                             content={project.content}
-                            img={project.img}
+                            img={project.imgSrc}
                             href={project.href}
                         />
                     )

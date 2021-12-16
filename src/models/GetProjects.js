@@ -1,14 +1,14 @@
 import { collection, getDocs, query, orderBy } from '../firebase'
 import { useEffect, useState } from 'react'
 
-export default function GetProjects(db, serviceName) {
+export default function GetProjects(db, collectionName) {
     const [projects, setProjects] = useState([])
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(true)
     useEffect(() => {
         (async () => {
             try {
-                const q = query(collection(db, serviceName), orderBy("id"))
+                const q = query(collection(db, collectionName), orderBy("id"))
                 const projectsSnapshot = await getDocs(q)
                 setProjects(projectsSnapshot.docs.map(doc => doc.data()))
                 setLoading(false)

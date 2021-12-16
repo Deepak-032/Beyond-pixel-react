@@ -11,8 +11,23 @@
     height: 105px;
     object-fit: contain;
 }
-@media (max-width: 767px) {
-
+@media (min-width: 550px) and ( max-width: 770px) {
+    .clients_mobile{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 8px;
+    }
+    .clients_mobile~img{
+        height: 87  px;
+    }
+    .client{
+        padding-left: 12px ;
+        padding-right: 12px;
+        
+    }
+}
+@media (max-width: 550px) {
     .clients_mobile{
         width: 100%;
         display: flex;

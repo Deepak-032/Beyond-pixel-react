@@ -16,8 +16,8 @@ function UiDesignLayout({ name, content, img, href }) {
                     </Link>
                 </div>
             </div>
-            <div className="col-12 col-lg-6 border">
-                <img className="w-100" src={img}  alt=""/>
+            <div className="col-12 col-lg-6 m_b_35 p_e_s">
+                <img className="w-100 box_shadow" src={img}  alt=""/>
             </div>
         </div>
     )

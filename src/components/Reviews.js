@@ -5,14 +5,14 @@ import './styles/Reviews.css'
 function Reviews() {
     return (
         <div className="row m_t_zero p_t_mobile max_width review">
-            <div className="col-12 d-md-none mb-5">
+            <div className="col-12 d-lg-none mb-5">
                 <Heading LWidth="81px" fontSize="40px" marginTop="0" heading={<>What People<br />Say About Us</>}></Heading>
             </div>
-            <div className="col-12 col-md d-none d-md-block" style={{ fontSize: "40px", lineHeight: "1.1", fontWeight: "900" }}>
+            <div className="col-12 col-lg d-none d-lg-block" style={{ fontSize: "40px", lineHeight: "1.1", fontWeight: "900" }}>
                 <br />What People<br />Say About<br />Us
             </div>
-            <div id="carouselExampleFade" className="carousel carousel-fade carousel-dark slide col-12 col-md-8" data-bs-ride="carousel">
-                <span className="review_line d-none d-md-block"></span>
+            <div id="carouselExampleFade" className="carousel carousel-fade carousel-dark slide col-12 col-lg-8" data-bs-ride="carousel">
+                <span className="review_line d-none d-lg-block"></span>
                 <div className="carousel-inner">
                     <div className="carousel-item active" >
                         <div className="client_name">

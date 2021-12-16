@@ -17,7 +17,7 @@ function GraphicDesignLayout({ name, content, href,  images }) {
                     </Link>
                 </div>
             </div>
-            <div className="col-12 col-lg-6">
+            <div className="col-12 col-lg-6 m_b_35">
                 <LayoutTwo layoutTwoSrc={images} styling={true} />
             </div>
         </div>

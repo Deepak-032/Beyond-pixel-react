@@ -3,16 +3,11 @@ import { Link } from "react-router-dom"
 import './styles/NavBar.css'
 
 function NavBar({ displayHandler }) {
-
     const [click, setClick] = useState(false)
     const [dropdown, setDropdown] = useState(false)
 
-    const toogleNav = () => {
-        setClick(!click)
-    }
-    const closeNav = () => {
-        setClick(false)
-    }
+    const toogleNav = () => setClick(!click)
+    const closeNav = () => setClick(false)
 
     useEffect(() => {
         if (click) {
@@ -63,7 +58,7 @@ function NavBar({ displayHandler }) {
                             </Link>
                         </li>
                     </ul>
-                    <span onClick={toogleNav} className="hamburgerMenu d-inline d-md-none">{click ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}</span>
+                    <span onClick={toogleNav} className="hamburgerMenu d-inline d-lg-none">{click ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}</span>
                 </div>
             </div>
         </>

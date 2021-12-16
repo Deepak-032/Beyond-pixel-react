@@ -40,6 +40,8 @@ function UploadFile() {
     const [count, setCount] = useState(0)
     const [total, setTotal] = useState(0)
     const [message, setMessage] = useState(initialMessage)
+    const [error, setError] = useState('')
+    const [randomString, setRandomString] = useState('')
 
     const { service, projectName, projectDesc, image0, image1, image2, image3, image4, color, videoLink } = state
 
@@ -87,15 +89,17 @@ function UploadFile() {
                     setStartInner(false)
                     setState({ ...initialState, service })
                     setStateTwo(initialStateTwo)
+                    setRandomString(Math.random().toString(36))
                     setLoading(false)
                 })
-                .catch(() => setMessage('Unable to upload the data, please try again.'))
+                .catch(() => setError('Unable to upload the data, please try again.'))
         }
     }, [state.service, startInner]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const change = e => {
         if (e.target.name === "service") {
             setState({ ...initialState, [e.target.name]: e.target.value })
+            setRandomString(Math.random().toString(36))
             return true
         }
         setState({ ...state, [e.target.name]: e.target.value })
@@ -111,6 +115,7 @@ function UploadFile() {
         setMessage(initialMessage)
         setCount(0)
         setTotal(0)
+        setError('')
         const data = {
             id: Date.now(),
             name: projectName,
@@ -122,11 +127,13 @@ function UploadFile() {
                 .then(() => {
                     setMessage('Successfully uploaded the data to the server.')
                     setState({ ...initialState, service })
+                    setRandomString(randomString)
                     setLoading(false)
                 })
                 .catch(() => {
-                    setMessage('Unable to upload the data, please try again.')
+                    setError('Unable to upload the data, please try again.')
                     setState({ ...initialState, service })
+                    setRandomString(randomString)
                     setLoading(false)
                 })
         } else {
@@ -147,13 +154,13 @@ function UploadFile() {
                 .then(urls => data.imgSrc = urls)
                 .then(() => addProject(db, service, projectName, data))
                 .then(() => setStartInner(true))
-                .catch(() => setMessage('Unable to upload the data, please try again.'))
+                .catch(() => setError('Unable to upload the data, please try again.'))
         }
     }
 
     return (
         <div className='max_width'>
-            <form onSubmit={upload} className="form_admin form_upload mt-5" method="POST">
+            <form onSubmit={upload} className="form_admin form_upload mt-5">
                 <select defaultValue="DEFAULT" className="highlight" name="service" onChange={change} required>
                     <option value="DEFAULT" disabled>Select the Service</option>
                     <option value="photography">Photography</option>
@@ -165,20 +172,20 @@ function UploadFile() {
                 {state.service &&
                     <>
                         <input type="text" name="projectName" value={state.projectName} onChange={change} placeholder="Enter new project's name" required />
-                        <textarea type="text" name="projectDesc" value={state.projectDesc} onChange={change} placeholder={`Enter project's description (max characters ${noOfImages === 3 ? "116" : "410"})`} maxLength={noOfImages === 3 ? "116" : "410"} />
+                        <textarea type="text" name="projectDesc" value={state.projectDesc} onChange={change} placeholder={`Enter project's description (max characters ${noOfImages === 3 ? "116" : "410"})`} maxLength={noOfImages === 3 ? "116" : "410"} required />
                         <div className="upload_file_container row justify-content-between align-items-center">
                             <div className={`col-12 ${noOfImages === 3 && "col-lg-6"} upload_file position-relative`}>
                                 <span className="upload_file_heading">For {state.service} page</span>
                                 {[...Array(noOfImages)].map((e, i) =>
                                     <div className="input-group mb-3">
                                         <label className="input-group-text" htmlFor={`innerGalleryImage${i}`}>Image {i + 1}</label>
-                                        <input type="file" onChange={fileHandler} name={`image${i}`} className="form-control" id={`innerGalleryImage${i}`} />
+                                        <input type="file" key={randomString} onChange={fileHandler} name={`image${i}`} className="form-control" id={`innerGalleryImage${i}`} required />
                                     </div>
                                 )}
                                 {noOfImages === 3 &&
                                     <div className="input-group mb-3">
                                         <label className="input-group-text" htmlFor="color">{state.color ? state.color : "Background color"}</label>
-                                        <input type="color" className="form-control" name="color" onChange={change} id="color" />
+                                        <input type="color" key={randomString} className="form-control" name="color" onChange={change} id="color" required />
                                     </div>
                                 }
                                 {noOfImages === 0 && <input type="link" name="videoLink" value={state.videoLink} onChange={change} placeholder="Enter link htmlFor the video" required />}
@@ -197,26 +204,26 @@ function UploadFile() {
                             <div className="upload_file_container form_admin position-relative">
                                 <span className="upload_file_heading">For {state.service} inner gallery</span>
                                 <div className='d-flex'>
-                                    <textarea className='me-3' type="text" name="projectDesc" value={stateTwo.projectDesc} onChange={changeTwo} placeholder="Enter project's description (max characters 410)" maxLength="410" />
-                                    <div className="input-group mb-3" style={{ height: "fit-content" }}> {/*handle this..*/}
+                                    <textarea className='me-3' type="text" name="projectDesc" value={stateTwo.projectDesc} onChange={changeTwo} placeholder="Enter project's description (max characters 410)" maxLength="410" required />
+                                    <div className="input-group mb-3" style={{ height: "fit-content" }}>
                                         <label className="input-group-text" htmlFor="headerImage">Header Image</label>
-                                        <input type="file" onChange={fileHandlerTwo} name='headerImg' className="form-control" id="headerImage" />
+                                        <input type="file" key={randomString} onChange={fileHandlerTwo} name='headerImg' className="form-control" id="headerImage" required />
                                     </div>
                                 </div>
-                                {noOfImages === 4 &&
-                                    <div className="input-group mb-3" style={{ height: "fit-content" }}> {/*handle this..*/}
+                                {noOfImages !== 3 &&
+                                    <div className="input-group mb-3" style={{ height: "fit-content" }}>
                                         <label className="input-group-text" htmlFor="color2">{stateTwo.color ? stateTwo.color : "Background color"}</label>
-                                        <input type="color" name='color' onChange={changeTwo} className="form-control" id="color2" />
+                                        <input type="color" key={randomString} name='color' onChange={changeTwo} className="form-control" id="color2" required />
                                     </div>
                                 }
                                 {noOfImages === 1 &&
                                     <>
-                                        <div className='d-flex'>
-                                            <input className="me-3" type="text" name="clientName" value={stateTwo.clientName} onChange={changeTwo} placeholder="Enter client name" required /> {/*handle this..*/}
-                                            <input className="me-3" type="text" name="role" value={stateTwo.role} onChange={changeTwo} placeholder="Enter role" required /> {/*handle this..*/}
-                                            <input type="text" name="year" value={stateTwo.year} onChange={changeTwo} placeholder="Enter year" required /> {/*handle this..*/}
+                                        <div className='d-flex mt-4'>
+                                            <input className="me-3" type="text" name="clientName" value={stateTwo.clientName} onChange={changeTwo} placeholder="Enter client name" required />
+                                            <input className="me-3" type="text" name="role" value={stateTwo.role} onChange={changeTwo} placeholder="Enter roles (separated by commas ',')" required />
+                                            <input type="text" name="year" value={stateTwo.year} onChange={changeTwo} placeholder="Enter year" required />
                                         </div>
-                                        <textarea type="text" name="paraOne" value={stateTwo.paraOne} onChange={changeTwo} placeholder="Enter case study para one" />
+                                        <textarea type="text" name="paraOne" value={stateTwo.paraOne} onChange={changeTwo} placeholder="Enter case study para one" required />
                                         <textarea type="text" name="paraTwo" value={stateTwo.paraTwo} onChange={changeTwo} placeholder="Enter case study para two" />
                                     </>
                                 }
@@ -224,8 +231,7 @@ function UploadFile() {
                                 {[...Array(20)].map((e, i) =>
                                     <div className="input-group mb-3">
                                         <label className="input-group-text" htmlFor={`innerGalleryImage${i}`}>Image {i + 1}</label>
-                                        {/* <input type="file" onChange={e => setImageArray(imageArray.concat(e.target.files[0]))} name={`image${i}`} className="form-control" id={`innerGalleryImage${i}`} /> */}
-                                        <input type="file" onChange={e => setImageArray({ ...imageArray, [i]: e.target.files[0] })} name={`image${i}`} className="form-control" id={`innerGalleryImage${i}`} />
+                                        <input type="file" key={randomString} onChange={e => setImageArray({ ...imageArray, [i]: e.target.files[0] })} name={`image${i}`} className="form-control" id={`innerGalleryImage${i}`} />
                                     </div>
                                 )}
                             </div>
@@ -234,7 +240,7 @@ function UploadFile() {
                 }
                 <button type="submit" disabled={loading} className="btn_contact_us">Upload</button>
             </form>
-            {modal && <Modal setModal={setModal} count={count} total={total} message={message} />}
+            {modal && <Modal setModal={setModal} count={count} total={total} loading={loading} message={message} error={error} />}
         </div>
     )
 }

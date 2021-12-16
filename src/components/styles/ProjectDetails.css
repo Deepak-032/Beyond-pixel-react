@@ -1,7 +1,7 @@
 .empty{
     height: 67px;
 }
-@media (max-width: 767px) {
+@media (max-width: 770px) {
     .empty{
         height: 0;
     }

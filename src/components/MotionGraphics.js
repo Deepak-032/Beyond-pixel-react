@@ -6,12 +6,12 @@ import { db } from '../firebase';
 
 function MotionGraphics({ displayHandler }) {
     useDocumentTitle("Beyond Pixel · Motion Graphics")
-    const { projects : motionGraphics, error } = GetProjects(db, 'motionGraphics')
+    const { projects, error } = GetProjects(db, 'motionGraphics')
 
     return (
         <>
             {error ? <h1 className="text-center">{error}</h1> :
-                motionGraphics.map((project, index) => {
+                projects.map((project, index) => {
                     project.id = index + 1
                     return (
                         <MotionGraphicsLayout

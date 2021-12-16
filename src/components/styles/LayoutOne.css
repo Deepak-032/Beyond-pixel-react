@@ -4,6 +4,7 @@
     width: 56.333333%;
 }
 .layout_one_heading{
+    line-height: 1.1;
     font-size: 40px;
     font-weight: bold;
 }
@@ -18,10 +19,15 @@
 .layout_one_content{
     padding: 25px 0 32px 0;
 }
-@media (max-width: 767px) {
+@media (min-width: 550px) and ( max-width: 770px) {
+    .layout_one_container{
+        max-width: 520px !important;
+    }
+}
+@media (max-width: 770px) {
     .layout_one_img_position{
         position: static;
-        width: auto;
+        width: 100%;
     }
     .layout_one_container{
         max-width: 280px;

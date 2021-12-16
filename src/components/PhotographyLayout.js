@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 function PhotographyLayout({ name, content, imgSrc, bgColor, reverse, href }) {
     return (
         <div className="row m_z_gallery" style={{ flexDirection: `${reverse}` }}>
-            <div className="col-12 col-md-7">
+            <div className="col-12 col-lg-7">
                 <img
                     className="gallery_img"
                     src={imgSrc[0]}
                     alt=""
                 />
             </div>
-            <div className="col-12 col-md">
+            <div className="col-12 col-lg">
                 <div className="d-flex flex-column" style={{ height: "100%" }}>
                     <div className="d-flex flex-row">
                         <img

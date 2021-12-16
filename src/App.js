@@ -46,7 +46,6 @@ function App() {
             {user ? <BackPanel /> : <Redirect to="/admin" />}
             <Footer />
           </Route>
-          
           <Route exact path="/about us">
             <NavBar displayHandler={displayHandler} />
             <Header
@@ -73,7 +72,7 @@ function App() {
           <Route exact path="/service/graphic design">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/Photography.jpg'
+              image='/assets/GraphicDesign.jpg'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content="Graphic Design"
@@ -84,7 +83,7 @@ function App() {
           <Route exact path="/service/cinematography">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/Photography.jpg'
+              image='/assets/Cinematography.jpg'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content="Cinematography"
@@ -95,7 +94,7 @@ function App() {
           <Route exact path="/service/motion graphics">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/Photography.jpg'
+              image='/assets/MotionGraphics.jpg'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content="Motion Graphics"
@@ -106,7 +105,7 @@ function App() {
           <Route exact path="/service/ui design">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/uiDesign.png'
+              image='/assets/uiDesign.jpg'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content={<>Ui/Ux Design<br />Website Development</>}
@@ -120,17 +119,16 @@ function App() {
             <PhotographyProject displayHandler={displayHandler} />
             <Footer />
           </Route>
-          <Route exact path="/graphic design/:id">
+          <Route exact path="/graphicDesign/:id">
             <NavBar displayHandler={displayHandler} />
             <GraphicDesignProject displayHandler={displayHandler} />
             <Footer />
           </Route>
-          <Route exact path="/ui design/:id">
+          <Route exact path="/uiDesign/:id">
             <NavBar displayHandler={displayHandler} />
             <UiDesignProject displayHandler={displayHandler} />
             <Footer />
           </Route>
-
           <Route path="/">
             <NavBar displayHandler={displayHandler} />
             <Header

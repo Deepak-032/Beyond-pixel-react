@@ -13,8 +13,8 @@ function MGraphicsCinematographyLayout({ name, content, videoSrc, displayHandler
                     <button onClick={displayHandler} className="btn_view_more">Contact Us</button>
                 </div>
             </div>
-            <div className="col-12 col-lg-6" style={{ height: "350px" }}>
-                <iframe width="100%" height="100%" src={videoSrc || "https://www.youtube.com/embed/KBIq11mNB0I"} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+            <div className="col-12 col-lg-6 m_b_35 youtube_video p_e_s">
+                <iframe width="100%" height="100%" src={videoSrc} title="YouTube video player" frameBorder={0} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen={true}></iframe>
             </div>
         </div>
     )

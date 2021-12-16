@@ -7,12 +7,10 @@ function About() {
             <div className="about row flex-column align_center">
                 <Heading LWidth="86px" fontSize="40px" heading={<>How We Solve<br />Problems</>}></Heading>
                 <div className="row justify-content-between justify_center">
-                    <span className="para col-12 col-md-6 text_center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident natus quidem officiis hic autem in quam sunt sequi culpa vel omnis, eaque veritatis excepturi magni mollitia adipisci minus ipsam eius ea animi alias nulla. Voluptatum possimus sequi quo voluptatibus minus voluptates error sapiente ipsa, numquam voluptatem. Explicabo nihil animi sequi?
-                    </span>
-                    <span className="para col-12 col-md-6 text_center">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, at porro. Vel vitae deserunt modi dolor doloremque saepe iste libero. Hic voluptatibus obcaecati suscipit. Officia magnam laborum consequatur dicta velit.
-                    </span>
+                    <span className="para margin col-12 col-lg-6 text_center">
+                        We at Beyond Pixel develop and implement imaginative solutions to help businesses increase brand awareness, better showcase products or services and, ultimately, increase profits. We use creative strategies to help clients achieve their goals. We use market research to help businesses develop strategies that get their business and its products or services better noticed.                    </span>
+                    <span className="para col-12 col-lg-6 text_center">
+                        In this world of ever changing trends and technology we aim to find creative ways to convey information.                     </span>
                 </div>
             </div>
         </div>

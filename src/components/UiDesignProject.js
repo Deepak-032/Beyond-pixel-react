@@ -31,9 +31,10 @@ function UiDesignProject({ displayHandler }) {
                         />
                         <LayoutThree
                             name={project[0].clientName}
+                            role={project[0].role}
                             year={project[0].year}
-                            paraOne={project[0].paraOne}
-                            paraTwo={project[0].paraTwo}
+                            paraOne={project[0].para[0]}
+                            paraTwo={project[0].para[1]}
                         />
                         {project[0].imgSrc.map(img => <img className="w-100 max_width d-block mb-5" src={img} alt="" />)}
                     </>)

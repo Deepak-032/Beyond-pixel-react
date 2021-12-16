@@ -10,7 +10,7 @@ let initialState = {
 }
 
 function Admin() {
-    useDocumentTitle("Beyond Pixel · Admin")
+    useDocumentTitle("Beyond Pixel · Admin login")
     const history = useHistory()
     const [showPassword, setShowPassword] = useState(false)
     const [loading, setLoading] = useState(false)

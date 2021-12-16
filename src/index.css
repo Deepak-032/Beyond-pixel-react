@@ -57,3 +57,19 @@ button:disabled:hover{
 input[type="color"] {
   height: 35px;
 }
+.box {
+  position: relative;
+  margin-bottom: 16px;
+  animation: bounceIn;
+  animation-duration: 1s;
+  color: #ffffff;
+  font-size: 2.3125rem;
+  border-radius: 50%;
+  width: 4.75rem;
+  height: 4.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2.75rem;
+  background-color: #498205;
+}

@@ -47,7 +47,12 @@
     border: 0;
     cursor: pointer;
 }
-@media (max-width: 767px) {
+@media (min-width: 550px) and ( max-width: 770px) {
+    .header_caption_gallery{
+        font-size: 42px !important;
+    }
+}
+@media (max-width: 770px) {
     .header_container_gallery {
         margin-top: 0;
         margin-bottom: 30px;
@@ -59,7 +64,6 @@
         line-height: 1.1;
     }
     .header_container_hero {
-        /* margin-top: 124px; */
         margin-top: 38px;
         margin-bottom: 50px;
     }

@@ -8,7 +8,9 @@ function Footer() {
             <div className="max_width footer row justify-content-between">
                 <div className="col-12 col-lg">
                     <div className="footer_headings">About Company</div>
-                    <div style={{ marginBottom: "18px" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex.</div>
+                    <div style={{ marginBottom: "18px" }}>
+                        We at Beyond Pixel develop and implement imaginative solutions to help businesses increase brand awareness, better showcase products or services and, ultimately, increase profits. We use creative strategies to help clients achieve their goals. We use market research to help businesses develop strategies that get their business and its products or services better noticed.
+                    </div>
                 </div>
                 <div className="col-4 col-lg fit_content" style={{ marginBottom: "18px" }}>
                     <div className="footer_headings">Information</div>
@@ -23,7 +25,7 @@ function Footer() {
                     <div><Link to=""><img className="social_icon" src="/assets/fbIcon.png" alt="" />Facebook</Link></div>
                     <div><Link to=""><img className="social_icon" src="/assets/twitterIcon.png" alt="" />Twitter</Link></div>
                     <div><Link to=""><img className="social_icon" src="/assets/instaIcon.png" alt="" />Instagram</Link></div>
-                    <div><Link to=""><span className="social_icon" style={{ marginRight: "25px" }}></span> Behance</Link></div>
+                    <div><Link to=""><img className="social_icon" src="/assets/Behance.png" alt="" />Behance</Link></div>
                 </div>
                 <div className="col-4 col-lg fit_content">
                     <div className="footer_headings">Contact Us</div>

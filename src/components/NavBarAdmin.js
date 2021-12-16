@@ -18,12 +18,8 @@ function NavBarAdmin({ setDisplay }) {
             setLoading(false)
         })
     }
-    const toogleNav = () => {
-        setClick(!click)
-    }
-    const closeNav = () => {
-        setClick(false)
-    }
+    const toogleNav = () => setClick(!click)
+    const closeNav = () => setClick(false)
 
     useEffect(() => {
         if (click)
@@ -49,20 +45,20 @@ function NavBarAdmin({ setDisplay }) {
                                 Home
                             </Link>
                         </li>
-                        <li className='navbar_admin' onClick={() => {setDisplay('ADD_NEW_PROJECT'); closeNav()}}>
+                        <li className='navbar_admin' onClick={() => { setDisplay('ADD_NEW_PROJECT'); closeNav() }}>
                             Add New project
                         </li>
-                        <li className='navbar_admin' onClick={() => {setDisplay('DELETE_PROJECT'); closeNav()}}>
+                        <li className='navbar_admin' onClick={() => { setDisplay('DELETE_PROJECT'); closeNav() }}>
                             Delete project
                         </li>
-                        <li className='navbar_admin' onClick={() => {setDisplay('CHANGE_PASSWORD'); closeNav()}}>
+                        <li className='navbar_admin' onClick={() => { setDisplay('CHANGE_PASSWORD'); closeNav() }}>
                             Change Password
                         </li>
                         <li>
                             <button disabled={loading} onClick={logOut} className="btn_contact_us btn_login">Log Out</button>
                         </li>
                     </ul>
-                    <span onClick={toogleNav} className="hamburgerMenu d-inline d-md-none">{click ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}</span>
+                    <span onClick={toogleNav} className="hamburgerMenu d-inline d-lg-none">{click ? <i className="bi bi-x"></i> : <i className="bi bi-list"></i>}</span>
                 </div>
             </div>
         </>

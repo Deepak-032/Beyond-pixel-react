@@ -22,7 +22,12 @@
     color: #0C1F35;
     max-width: 500px;
 }
-@media (max-width: 767px) {
+@media (min-width: 550px) and ( max-width: 770px) {
+    .layout_three_content{
+        max-width: 520px !important;
+    }
+}
+@media (max-width: 770px) {
     .layout_three_position{
         position: static;
         width: auto;
