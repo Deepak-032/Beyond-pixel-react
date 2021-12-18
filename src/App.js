@@ -110,7 +110,7 @@ function App() {
               image='/assets/uiDesign.webp'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
-              content={<>Ui/Ux Design<br />Website Development</>}
+              content={<>Ui/Ux Design &<br />Website Development</>}
             />
             <UiDesign />
             <Footer />
@@ -144,7 +144,7 @@ function App() {
           <Route path="/">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/Group4@2x.webp'
+              image='/assets/HeroImage.webp'
               headerClass="header_container_hero"
               captionClass="header_caption_hero"
               display="d-none d-md-block"

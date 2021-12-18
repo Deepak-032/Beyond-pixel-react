@@ -1,21 +1,27 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom"
 import './styles/NavBar.css'
 
 function NavBar({ displayHandler }) {
     const [click, setClick] = useState(false)
     const [dropdown, setDropdown] = useState(false)
+    const ref = useRef(null)
 
     const toogleNav = () => setClick(!click)
     const closeNav = () => setClick(false)
 
     useEffect(() => {
-        if (click) {
-            document.body.style.overflow = "hidden"
-        } else {
-            document.body.style.overflow = "auto"
+        if (click) document.body.style.overflow = "hidden"
+        else document.body.style.overflow = "auto"
+        function handleClickOutside(event) {
+            if (dropdown && !ref.current.contains(event.target)) {
+                setDropdown(!dropdown)
+            }
         }
-    }, [click])
+        document.addEventListener("mousedown", handleClickOutside)
+
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [click, dropdown])
 
     return (
         <>
@@ -34,7 +40,7 @@ function NavBar({ displayHandler }) {
                                 Home
                             </Link>
                         </li>
-                        <li onClick={() => setDropdown(!dropdown)}>
+                        <li onClick={() => setDropdown(!dropdown)} ref={ref}>
                             <div className="cursor menu_services">Services <i className="bi bi-chevron-down"></i></div>
                             <ul className="services_dropdown" style={{ display: dropdown ? "" : "none" }}>
                                 <li><Link to="/service/photography" onClick={closeNav}>Photography</Link></li>

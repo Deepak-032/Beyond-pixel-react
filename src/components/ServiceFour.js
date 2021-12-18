@@ -36,7 +36,7 @@ function ServiceFour() {
                             <div className="block_two position-absolute" style={{ maxWidth: "100%", maxHeight: "100%", width: "100%", height: "100%" }}></div>
                             <img
                                 style={{
-                                    top: "51%",
+                                    top: "58%",
                                     left: "100%",
                                     maxWidth: "248px",
                                     width: "18vw"

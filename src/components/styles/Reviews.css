@@ -11,12 +11,10 @@
 }
 .client_name{
     text-align: center;
-    font-size: 22px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #E85353;
     margin-bottom: 28px;
-}
-.client_name > div{
-    font-size: 11px;
-    color: #FD8814;
 }
 .carousel{
     padding: 0;

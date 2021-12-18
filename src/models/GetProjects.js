@@ -8,7 +8,7 @@ export default function GetProjects(db, collectionName) {
     useEffect(() => {
         (async () => {
             try {
-                const q = query(collection(db, collectionName), orderBy("id"))
+                const q = query(collection(db, collectionName), orderBy("id", "desc"))
                 const projectsSnapshot = await getDocs(q)
                 setProjects(projectsSnapshot.docs.map(doc => doc.data()))
                 setLoading(false)

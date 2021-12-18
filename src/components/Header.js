@@ -5,7 +5,7 @@ import './styles/Header.css'
 function Header({ image, content, headerClass, display, captionClass, displayContact = false, mobile = false, displayHandler }) {
 
     return (
-        <div className="header">
+        <div className="header position-relative">
             <div className={`${headerClass}`}>
                 <div className={`position-relative ${display}`}>
                     <img
