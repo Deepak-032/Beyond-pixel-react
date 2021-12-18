@@ -143,6 +143,9 @@
 .youtube_video{
     height: 350px;
 }
+p{
+    font-size: 14px;
+}
 @media (max-width: 550px) {
     .youtube_video{
         height: 100%;
@@ -232,5 +235,9 @@
     }
     .p_e_s{
         padding: 0 11px;
+    }
+    .policy_text_center_margin{
+        text-align: center;
+        margin: 0 30px;
     }
 }

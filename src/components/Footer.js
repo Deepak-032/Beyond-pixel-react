@@ -16,9 +16,9 @@ function Footer() {
                     <div className="footer_headings">Information</div>
                     <div><a href="/#services">Services</a></div>
                     <div><Link to="/about us">About Us</Link></div>
-                    <div><Link to="">Download Brochure</Link></div>
-                    <div><Link to="">Terms & Conditions</Link></div>
-                    <div><Link to="">Privacy Policy</Link></div>
+                    <div><Link to="#">Download Brochure</Link></div>
+                    <div><Link to="/conditions">Terms & Conditions</Link></div>
+                    <div><Link to="/policy">Privacy Policy</Link></div>
                 </div>
                 <div className="col-4 col-lg fit_content" style={{ marginBottom: "18px" }}>
                     <div className="footer_headings">Social Media</div>

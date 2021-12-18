@@ -36,13 +36,13 @@ function NavBar({ displayHandler }) {
                         </li>
                         <li onClick={() => setDropdown(!dropdown)}>
                             <div className="cursor menu_services">Services <i className="bi bi-chevron-down"></i></div>
-                            <div className="services_dropdown" style={{ display: dropdown ? "" : "none" }}>
+                            <ul className="services_dropdown" style={{ display: dropdown ? "" : "none" }}>
                                 <li><Link to="/service/photography" onClick={closeNav}>Photography</Link></li>
                                 <li><Link to="/service/graphic design" onClick={closeNav}>Graphic Design</Link></li>
                                 <li><Link to="/service/cinematography" onClick={closeNav}>Cinematography</Link></li>
                                 <li><Link to="/service/motion graphics" onClick={closeNav}>Motion Graphics</Link></li>
                                 <li><Link to="/service/ui design" onClick={closeNav}>Ui Design</Link></li>
-                            </div>
+                            </ul>
                         </li>
                         <li>
                             <Link to="/about us" onClick={closeNav} >
@@ -53,7 +53,7 @@ function NavBar({ displayHandler }) {
                             <button className="btn_contact d-none d-lg-block" onClick={displayHandler}>
                                 Contact Us
                             </button>
-                            <Link className="d-lg-none" onClick={displayHandler} >
+                            <Link to=" " className="d-lg-none" onClick={displayHandler} >
                                 Contact
                             </Link>
                         </li>

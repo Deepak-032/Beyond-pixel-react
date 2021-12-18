@@ -40,11 +40,11 @@ function GraphicDesignProject({ displayHandler }) {
                         />
                         {array.map((subArray, index) => {
                             if (index % 2 === 0) {
-                                return (<div className="max_width">
+                                return (<div key={index} className="max_width">
                                     <LayoutTwo layoutTwoSrc={subArray} styling={true} />
                                 </div>)
                             } else {
-                                return <div className="max_width margin_img_gd">
+                                return <div key={index} className="max_width margin_img_gd">
                                     <img
                                         className="w-100 "
                                         src={subArray}

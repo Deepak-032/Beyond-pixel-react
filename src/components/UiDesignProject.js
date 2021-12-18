@@ -36,7 +36,7 @@ function UiDesignProject({ displayHandler }) {
                             paraOne={project[0].para[0]}
                             paraTwo={project[0].para[1]}
                         />
-                        {project[0].imgSrc.map(img => <img className="w-100 max_width d-block mb-5" src={img} alt="" />)}
+                        {project[0].imgSrc.map(img => <img key={img} className="w-100 max_width d-block mb-5" src={img} alt="" />)}
                     </>)
             }
         </div>

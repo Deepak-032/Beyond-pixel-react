@@ -17,6 +17,8 @@ import UiDesign from "./components/UiDesign";
 import GraphicDesignProject from "./components/GraphicDesignProject";
 import { auth, onAuthStateChanged } from './firebase';
 import UiDesignProject from "./components/UiDesignProject";
+import Policy from "./components/Policy";
+import Conditions from "./components/Conditions";
 
 function App() {
   const displayHandler = () => {
@@ -49,7 +51,7 @@ function App() {
           <Route exact path="/about us">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/AboutUs.jpg'
+              image='/assets/AboutUs.webp'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content="About Beyond Pixel"
@@ -61,7 +63,7 @@ function App() {
           <Route exact path="/service/photography">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/Photography.jpg'
+              image='/assets/Photography.webp'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content="Photography"
@@ -72,7 +74,7 @@ function App() {
           <Route exact path="/service/graphic design">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/GraphicDesign.jpg'
+              image='/assets/GraphicDesign.webp'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content="Graphic Design"
@@ -83,7 +85,7 @@ function App() {
           <Route exact path="/service/cinematography">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/Cinematography.jpg'
+              image='/assets/Cinematography.webp'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content="Cinematography"
@@ -94,7 +96,7 @@ function App() {
           <Route exact path="/service/motion graphics">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/MotionGraphics.jpg'
+              image='/assets/MotionGraphics.webp'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content="Motion Graphics"
@@ -105,7 +107,7 @@ function App() {
           <Route exact path="/service/ui design">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/uiDesign.jpg'
+              image='/assets/uiDesign.webp'
               headerClass="header_container_gallery"
               captionClass="header_caption_gallery"
               content={<>Ui/Ux Design<br />Website Development</>}
@@ -129,10 +131,20 @@ function App() {
             <UiDesignProject displayHandler={displayHandler} />
             <Footer />
           </Route>
+          <Route exact path="/conditions">
+            <NavBar displayHandler={displayHandler} />
+            <Conditions />
+            <Footer />
+          </Route>
+          <Route exact path="/policy">
+            <NavBar displayHandler={displayHandler} />
+            <Policy />
+            <Footer />
+          </Route>
           <Route path="/">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/Group4@2x.png'
+              image='/assets/Group4@2x.webp'
               headerClass="header_container_hero"
               captionClass="header_caption_hero"
               display="d-none d-md-block"

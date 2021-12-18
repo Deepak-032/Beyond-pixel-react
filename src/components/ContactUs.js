@@ -47,15 +47,15 @@ function ContactUs({ contactClass, shadow, wrapper = false }) {
         <div className={` ${contactClass} m_t_zero p_t_mobile m_b_zero position-relative`} id="pop_box">
             <img
                 className="contact_spiral position-absolute"
-                src="/assets/Group4@2x.png"
-                alt="spiral"
+                src="/assets/Group4@2x.webp"
+                alt=""
             />
             <div className={` ${shadow} row pop_up max_width`} ref={wrapper ? wrapperRef : null}>
                 <div className="col-12 col-lg-6 pop_up_img" style={{ padding: "0" }}>
                     <div className="position-relative">
                         <img
                             className="contact_img"
-                            src="/assets/contactUs.png"
+                            src="/assets/contactUs.webp"
                             alt=""
                         />
                         <div className="contact_img_container"></div>

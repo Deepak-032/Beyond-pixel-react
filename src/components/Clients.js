@@ -18,6 +18,7 @@ function Clients({ bgColor }) {
                 {
                     clients.map(client =>
                         <img
+                            key={client}
                             src={`/assets/clients/${client}.png`}
                             alt={`${client}`}
                         />

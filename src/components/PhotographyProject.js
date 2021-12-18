@@ -30,9 +30,9 @@ function PhotographyProject({ displayHandler }) {
                         />
                         {project[0].imgSrc.map((img, index) => {
                             if (index % 6 === 0 || (index + 1) % 6 === 0) {
-                                return <img className="w-100" src={img} alt="" />
+                                return <img key={index} className="w-100" src={img} alt="" />
                             } else {
-                                return <img className="w-50" src={img} alt="" />
+                                return <img key={index} className="w-50" src={img} alt="" />
                             }
                         })}
                     </>)

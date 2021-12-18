@@ -8,7 +8,7 @@ function LayoutThree({ name, role, year, paraOne, paraTwo }) {
             <div className="col-12 col-lg-5 layout_three_container">
                 <div className="layout_three_heading">Case Study of<br />{name}</div>
                 <div className="layout_three_heading">Role
-                    {roleArray.map(role => <li style={{ fontSize: "14px" }}>{role}</li>)}
+                    {roleArray.map(role => <li key={role} style={{ fontSize: "14px" }}>{role}</li>)}
                 </div>
                 <div className="layout_three_heading">Year
                     <div>{year}</div>
