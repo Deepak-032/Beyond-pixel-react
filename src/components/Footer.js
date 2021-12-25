@@ -22,10 +22,9 @@ function Footer() {
                 </div>
                 <div className="col-4 col-lg fit_content" style={{ marginBottom: "18px" }}>
                     <div className="footer_headings">Social Media</div>
-                    <div><Link to=""><img className="social_icon" src="/assets/fbIcon.png" alt="" />Facebook</Link></div>
-                    <div><Link to=""><img className="social_icon" src="/assets/twitterIcon.png" alt="" />Twitter</Link></div>
-                    <div><Link to=""><img className="social_icon" src="/assets/instaIcon.png" alt="" />Instagram</Link></div>
-                    <div><Link to=""><img className="social_icon" src="/assets/Behance.png" alt="" />Behance</Link></div>
+                    <div><a target="blank" href="https://www.facebook.com/beyondpixel.in/"><img className="social_icon" src="/assets/fbIcon.png" alt="" />Facebook</a></div>
+                    <div><a target="blank" href="https://www.instagram.com/beyondpixel.in/?utm_medium=copy_link"><img className="social_icon" src="/assets/instaIcon.png" alt="" />Instagram</a></div>
+                    <div><a target="blank" href="https://www.behance.net/beyondpixelin?tracking_source=search_users%7CBeyond%20pixel"><img className="social_icon" src="/assets/Behance.png" alt="" />Behance</a></div>
                 </div>
                 <div className="col-4 col-lg fit_content">
                     <div className="footer_headings">Contact Us</div>

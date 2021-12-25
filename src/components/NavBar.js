@@ -6,7 +6,7 @@ function NavBar({ displayHandler }) {
     const [click, setClick] = useState(false)
     const [dropdown, setDropdown] = useState(false)
     const ref = useRef(null)
-
+    const [y, setY] = useState(0)
     const toogleNav = () => setClick(!click)
     const closeNav = () => setClick(false)
 
@@ -18,14 +18,29 @@ function NavBar({ displayHandler }) {
                 setDropdown(!dropdown)
             }
         }
-        document.addEventListener("mousedown", handleClickOutside)
+        function handleScroll() {
+            if (window.scrollY > 5)
+                document.getElementById("nav_style").classList.add("nav_style_changer")
+            else
+                document.getElementById("nav_style").classList.remove("nav_style_changer")
 
-        return () => document.removeEventListener("mousedown", handleClickOutside)
-    }, [click, dropdown])
+            if (y > window.scrollY)
+                document.getElementById("nav_style").classList.add("nav_style_changer_mobile")
+            else if (y < window.scrollY)
+                document.getElementById("nav_style").classList.remove("nav_style_changer_mobile")
+            setY(window.scrollY)
+        }
+        document.addEventListener("scroll", handleScroll)
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => {
+            document.removeEventListener("scroll", handleScroll)
+            document.removeEventListener("mousedown", handleClickOutside)
+        }
+    }, [click, dropdown, y])
 
     return (
         <>
-            <div className="navbar_container">
+            <div className="navbar_container" id="nav_style">
                 <div className="navbar nav_mobile">
                     <Link to="/">
                         <img
@@ -60,7 +75,7 @@ function NavBar({ displayHandler }) {
                                 Contact Us
                             </button>
                             <Link to=" " className="d-lg-none" onClick={displayHandler} >
-                                Contact
+                                Contact Us
                             </Link>
                         </li>
                     </ul>

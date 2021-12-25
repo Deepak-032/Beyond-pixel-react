@@ -7,9 +7,9 @@ function Header({ image, content, headerClass, display, captionClass, displayCon
     return (
         <div className="header position-relative">
             <div className={`${headerClass}`}>
-                <div className={`position-relative ${display}`}>
+                <div className={`position-relative header_spiral ${display}`}>
                     <img
-                        className="header_spiral"
+                        className="w-100 header_img"
                         src={image}
                         alt=""
                     />
@@ -20,9 +20,9 @@ function Header({ image, content, headerClass, display, captionClass, displayCon
                 {mobile &&
                     <div className="position-relative d-md-none">
                         <img
-                            className="header_spiral position-absolute"
+                            className="position-absolute w-100"
                             style={{ top: "28%", zIndex: "-1" }}
-                            src="/assets/mobileSpiral.png"
+                            src="/assets/mobileSpiral.webp"
                             alt=""
                         />
                         <div className={`${captionClass} header_caption_hero position-static`} style={{ fontSize: "80px" }}>

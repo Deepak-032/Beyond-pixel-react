@@ -43,7 +43,7 @@ function ServiceThree() {
                         />
                     </div>
                 </div>
-                {/* <div className="outer_block_right"></div> */} {/* this service does not uses this div */}
+                <div className="outer_block_right d-none d-lg-block"></div>
                 <img
                     className="service_img_spiral position-absolute d-none d-lg-block"
                     src="/assets/MaskGroup1@2x.png"

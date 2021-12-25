@@ -24,6 +24,9 @@
     font-size: 14px;
     box-shadow: 0 8px 50px #ebebeb;
 }
+.carousel-item{
+    height: 210px;
+}
 .navigate{
     color: #0C1F35;
 }

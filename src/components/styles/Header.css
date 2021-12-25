@@ -15,18 +15,21 @@
     justify-content: center;
     color: #FFFFFF !important;
 }
-.header_spiral{
-    width: 100%;
-    position: relative;
+.header_container_hero .header_spiral{
+    height: 636px;
+}
+.header_container_hero .header_img{
+    height: 636px;
+    object-fit: contain;
 }
 .header_caption_hero{
     line-height: 1.1;
-    font-size: 8.5vw;
+    font-size: 114.5px;
     font-weight: bold;
     color: #0C1F35;
     text-align: center;
     position: absolute;
-    top: 166px;
+    top: 162px;
     width: 100%;
 }
 .btn_container{
@@ -61,6 +64,10 @@
     }
 }
 @media (max-width: 770px) {
+    .header_container_hero .header_img,
+    .header_container_hero .header_spiral{
+        height: auto;
+    }
     .header_container_gallery {
         margin-top: 0;
         margin-bottom: 30px;
@@ -69,7 +76,7 @@
         font-size: 22px;
     }
     .header_caption_hero{
-        line-height: 1.1;
+        font-size: 65.3px;
     }
     .header_container_hero {
         margin-top: 38px;

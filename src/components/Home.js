@@ -8,7 +8,6 @@ import { useDocumentTitle } from './CustomHooks'
 
 function Home() {
     useDocumentTitle("Beyond Pixel · A Place Where Ideas Grow")
-
     return (
         <div>
             <Clients />

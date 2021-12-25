@@ -144,7 +144,7 @@ function App() {
           <Route path="/">
             <NavBar displayHandler={displayHandler} />
             <Header
-              image='/assets/HeroImage.webp'
+              image='/assets/HeroImage.png'
               headerClass="header_container_hero"
               captionClass="header_caption_hero"
               display="d-none d-md-block"
@@ -159,7 +159,7 @@ function App() {
         </Switch>
       }
     </Router>
-  );
+  )
 }
 
 export default App;

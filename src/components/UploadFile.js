@@ -178,8 +178,8 @@ function UploadFile() {
                                 <span className="upload_file_heading">For {state.service} page</span>
                                 {[...Array(noOfImages)].map((e, i) =>
                                     <div className="input-group mb-3">
-                                        <label className="input-group-text" htmlFor={`innerGalleryImage${i}`}>Image {i + 1}</label>
-                                        <input type="file" key={randomString} onChange={fileHandler} name={`image${i}`} className="form-control" id={`innerGalleryImage${i}`} required />
+                                        <label className="input-group-text" htmlFor={`galleryImage${i}`}>Image {i + 1}</label>
+                                        <input type="file" key={randomString} onChange={fileHandler} name={`image${i}`} className="form-control" id={`galleryImage${i}`} required />
                                     </div>
                                 )}
                                 {noOfImages === 3 &&
@@ -231,7 +231,7 @@ function UploadFile() {
                                 {[...Array(20)].map((e, i) =>
                                     <div className="input-group mb-3">
                                         <label className="input-group-text" htmlFor={`innerGalleryImage${i}`}>Image {i + 1}</label>
-                                        <input type="file" key={randomString} onChange={e => setImageArray({ ...imageArray, [i]: e.target.files[0] })} name={`image${i}`} className="form-control" id={`innerGalleryImage${i}`} />
+                                        <input type="file" key={randomString} onChange={e => setImageArray({ ...imageArray, [i]: e.target.files[0] })} className="form-control" id={`innerGalleryImage${i}`} />
                                     </div>
                                 )}
                             </div>

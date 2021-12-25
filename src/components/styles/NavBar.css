@@ -3,7 +3,7 @@
     top: 0;
     width: 100%;
     z-index: 2;
-    background-color: #FFFF;
+    background-color: transparent;
 }
 .navbar{
     display: flex;
@@ -58,6 +58,11 @@
 }
 .services_dropdown>li>a{
     padding: 0px 20px;
+}
+.nav_style_changer{
+    background-color: #FFFF;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    transition: .8s;
 }
 @media (max-width: 770px) {
     .navbar_right{
@@ -121,5 +126,8 @@
     .services_dropdown{
         position: static;
         box-shadow: none;
+    }
+    .nav_style_changer_mobile{
+        position: sticky !important;
     }
 }

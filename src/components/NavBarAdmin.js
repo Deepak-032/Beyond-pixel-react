@@ -30,7 +30,7 @@ function NavBarAdmin({ setDisplay }) {
 
     return (
         <>
-            <div className="navbar_container position-sticky">
+            <div className="navbar_container position-sticky" style={{background: "#FFF", boxShadow: "0 0 10px rgb(0 0 0 / 10%)"}}>
                 <div className="navbar nav_mobile">
                     <Link to="/">
                         <img
