@@ -5,7 +5,7 @@ import UiDesignLayout from './UiDesignLayout';
 import { useDocumentTitle } from './CustomHooks'
 
 function UiDesign() {
-    useDocumentTitle("Beyond Pixel · Ui Design")
+    useDocumentTitle("Beyond Pixel · Ui/Ux Design & Website Development")
     const { projects: uiDesign, error } = GetProjects(db, 'uiDesign')
 
     return (

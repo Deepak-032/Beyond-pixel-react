@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import UploadFile from './UploadFile'
-import { auth, updatePassword } from '../firebase'
+import { auth, updatePassword, signOut } from '../firebase'
 import NavBarAdmin from './NavBarAdmin';
 import { useDocumentTitle } from './CustomHooks'
 import DeleteProject from './DeleteProject'
@@ -15,18 +15,27 @@ function BackPanel() {
         const user = auth.currentUser
         updatePassword(user, newPassword)
             .then(() => {
-                alert("Password changed successfully.")
+                alert("Password successfully changed.")
             }).catch((e) => {
                 alert(e.message)
             })
     }
+    useEffect(() => {
+        return () => {
+            signOut(auth).then(() => {
+                alert("You have been automatically logged out.")
+            }).catch(e => {
+                alert(e.message)
+            })
+        }
+    }, [])
     return (
         <>
             <NavBarAdmin setDisplay={setDisplay} />
             {
                 {
                     'ADD_NEW_PROJECT': <UploadFile />,
-                    'DELETE_PROJECT': <DeleteProject/>,
+                    'DELETE_PROJECT': <DeleteProject />,
                     'CHANGE_PASSWORD':
                         <form className="form_admin max_width mt-5" onSubmit={e => changePassword(e)}>
                             <input type="password" value={newPassword} onChange={e => setNewPassword(e.target.value)} name="newPassword" placeholder="New Password" minLength="8" required />

@@ -21,11 +21,12 @@ function Admin() {
         try {
             setLoading(true)
             await signInWithEmailAndPassword(auth, user.email, user.password)
+            setLoading(false)
             history.push('/admin/upload')
         } catch (e) {
             alert(e.message)
+            setLoading(false)
         }
-        setLoading(false)
     }
     const onChangeHandler = e => {
         setUser({...user, [e.target.name]: e.target.value})
