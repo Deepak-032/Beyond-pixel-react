@@ -23,12 +23,13 @@ function NavBar({ displayHandler }) {
                 document.getElementById("nav_style").classList.add("nav_style_changer")
             else
                 document.getElementById("nav_style").classList.remove("nav_style_changer")
-
-            if (y > window.scrollY)
-                document.getElementById("nav_style").classList.add("nav_style_changer_mobile")
-            else if (y < window.scrollY)
-                document.getElementById("nav_style").classList.remove("nav_style_changer_mobile")
-            setY(window.scrollY)
+            if (!click) {
+                if (y > window.scrollY)
+                    document.getElementById("nav_style").classList.add("nav_style_changer_mobile")
+                else if (y < window.scrollY)
+                    document.getElementById("nav_style").classList.remove("nav_style_changer_mobile")
+                setY(window.scrollY)
+            }
         }
         document.addEventListener("scroll", handleScroll)
         document.addEventListener("mousedown", handleClickOutside)

@@ -12,8 +12,8 @@ function Modal({ setModal, count, total, loading, message, error }) {
                                 {message}<br />{total !== 0 && `${count}/${total} images uploaded`}
                             </h3>
                             {loading ? <img className="loading_img" src="/loading.gif" alt="uploading" /> :
-                                <div class="box m-auto">
-                                    <i class="bi bi-check2"></i>
+                                <div className="box m-auto">
+                                    <i className="bi bi-check2"></i>
                                 </div>
                             }
                         </>

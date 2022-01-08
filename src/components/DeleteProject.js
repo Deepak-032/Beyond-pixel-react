@@ -15,7 +15,7 @@ function DeleteProject() {
     const [modal, setModal] = useState(false)
 
     useEffect(() => {
-        if (state.service)
+        if (state.service !== 'DEFAULT')
             (async () => {
                 try {
                     const q = query(collection(db, state.service), orderBy("id"))
@@ -25,7 +25,7 @@ function DeleteProject() {
                     alert("Error cannot get the data.")
                 }
             })()
-    }, [state.service, modal]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, [state.service]) // eslint-disable-line react-hooks/exhaustive-deps
 
     const cleanStorage = dir => {
         const deleteRref = ref(storage, dir)
@@ -48,7 +48,7 @@ function DeleteProject() {
                 .then(() => {
                     setLoading(false)
                     setState({ ...initialState, message: `Successfully deleted the project, ${state.delete}` })
-                }).catch(() => setState({ error: 'Error occured, please try again later.' }))
+                }).catch(() => setState({ ...initialState, error: 'Error occured, please try again later.' }))
         } else {
             await deleteDoc(doc(db, `${state.service}/${state.delete}/subCollection`, "innerGallery"))
                 .then(async () => {
@@ -57,7 +57,7 @@ function DeleteProject() {
                 }).then(() => {
                     setLoading(false)
                     setState({ ...initialState, message: `Successfully deleted the project, ${state.delete}` })
-                }).catch(() => setState({ error: 'Error occured, please try again later.' }))
+                }).catch(() => setState({ ...initialState, error: 'Error occured, please try again later.' }))
         }
     }
 
@@ -75,7 +75,7 @@ function DeleteProject() {
                 {state.service !== 'DEFAULT' &&
                     <select defaultValue="DEFAULT" className="highlight" name="service" onChange={e => setState({ ...state, delete: e.target.value })} required>
                         <option value="DEFAULT" disabled>Select the project to delete</option>
-                        {state.projects?.map(project => <option value={project.name}>{project.name}</option>)}
+                        {state.projects?.map(project => <option key={project.name} value={project.name}>{project.name}</option>)}
                     </select>
                 }
                 <button type="submit" disabled={(state.delete ? false : true) && !loading} className="btn_contact_us">Delete</button>

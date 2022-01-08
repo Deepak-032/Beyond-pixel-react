@@ -14,7 +14,7 @@ function Reviews() {
             <div id="carouselExampleFade" className="carousel carousel-fade carousel-dark slide col-12 col-lg-8" data-bs-ride="carousel">
                 <span className="review_line d-none d-lg-block"></span>
                 <div className="carousel-inner">
-                    <div className="carousel-item active" >
+                    <div className="carousel-item active">
                         <div className="client_name">
                             Beanly
                         </div>
