@@ -16,7 +16,7 @@ function GraphicDesignProject({ displayHandler }) {
 
     !loading && project[0].imgSrc.forEach((p, i) => {
         (i + 1) % 5 === 0 ? array.push(p) : subArray.push(p)
-        if ((i + 1) % 4 === 0 || i === project[0].imgSrc.length - 1) {
+        if (i === 3 || i === 8 || i === 13 || i === 18 || i === 23 || i === project[0].imgSrc.length - 1) {
             array.push(subArray)
             subArray = []
         }

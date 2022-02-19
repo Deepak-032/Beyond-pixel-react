@@ -75,7 +75,7 @@ function NavBar({ displayHandler }) {
                             <button className="btn_contact d-none d-lg-block" onClick={displayHandler}>
                                 Contact Us
                             </button>
-                            <Link to=" " className="d-lg-none" onClick={displayHandler} >
+                            <Link to="# " className="d-lg-none" onClick={displayHandler} >
                                 Contact Us
                             </Link>
                         </li>
