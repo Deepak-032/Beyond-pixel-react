@@ -1,6 +1,6 @@
 # Beyond Pixel
 
-[upchaar](https://beyondpixel.in/)- A Place Where Ideas Grow.
+[Beyond Pixel](https://beyondpixel.in/)- A Place Where Ideas Grow.
 
 # About The Project
 
@@ -22,7 +22,7 @@ You need to have node installed on your device to run this web app.
 
 1. Clone the repo using
     ```sh
-   git clone https://github.com/Deepak-032/Upchaar
+   git clone https://github.com/Deepak-032/Beyond-pixel-react
    ```
 
 2. Install NPM packages
